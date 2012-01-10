@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {width: 600px}
+.keysim {
+border: 1px solid black;
+font-family: monospace;
+margin:0.5ex;
+padding:0.5ex;
+position:fixed;
+right:0;
+top:0;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+<script src="jquery.jknav.js"></script>
+<script src="jquery.hotkeys.js"></script>
+<script>
+function hl (item) {
+	var $item = $(item);
+	var original_bgcolor = $item.css('background-color');
+	$item.animate({backgroundColor: 'pink'}, 'normal', 'swing', function () {
+		$item.animate({backgroundColor: original_bgcolor}, 'normal');
+		});
+	}
+
+$(function () {
+	$.jknav.DEBUG = true;
+
+	$('h2').jknav(hl);
+	$.jknav.init({up: 'l', down: 'h', easing: 'easeOutBounce', speed: 'slow', reevaluate: false});
+
+	$('h2').jknav(hl, 'h2-nocircular');
+	$.jknav.init({name: 'h2-nocircular', up: 'u', down: 'd', easing: 'easeOutBounce', speed: 'slow', circular: false, reevaluate: false});
+
+	// Using default j, k
+	$('h2,h3').jknav(hl, 'h2h3');
+	$.jknav.init({name: 'h2h3', reevaluate: true});
+	// Bind up/down using jquery.hotkeys
+	$('html').bind('keyup', 'up', function(){$.jknav.up('h2h3');});
+	$('html').bind('keyup', 'down', function(){$.jknav.down('h2h3');});
+	});
+</script>
+</head>
+<body>
+<div class='keysim'>
+<a href='javascript:$.jknav.down("h2h3");'>j</a> | <a href='javascript:$.jknav.up("h2h3");'>k</a><br/>
+<a href='javascript:$.jknav.down();'>h</a> | <a href='javascript:$.jknav.up();'>l</a><br/>
+<a href='javascript:$.jknav.down("h2-nocircular");'>d</a> | <a href='javascript:$.jknav.up("h2-nocircular");'>u</a><br/>
+</div>
+<h1>jknav demo page</h1>
+<p>j, k - move between h2, h3 (easing: swing, speed: normal, reevalute: true)</p>
+<p>&lt;Up&gt;, &lt;Down&gt; - same as j, k. This is powered by <a href="https://github.com/jeresig/jquery.hotkeys">jquery.hotkeys</a> plugin. View source code for how to work with hotkeys plugin.</p>
+<p>h, l - move between h2 (easing: easeOutBounce, speed: slow, reevalute: false)</p>
+<p>u, d - move between h2 (easing: easeOutBounce, speed: slow, circular: false, reevalute: false)</p>
+<p>The box on top-right corner is to demonstrate that you could have a programmatic way to control jknav. In this box, user can use clicks to navigate.</p>
+<h2>Form elements for testing</h2>
+<form>
+<div>
+  <input type="text"/>
+  <select><option>option</option></select>
+  <input type="button" value="button1"/>
+  <button>button2</button>
+</div>
+<div>
+  <textarea></textarea>
+</div>
+</form>
+<h2>Header 2:1</h2>
+<h3>Header 3:1</h3>
+Lorem ipsum dolor sit amet, urna magna semper pariatur montes, ligula wisi, ligula ut donec nullam imperdiet, fermentum enim. Imperdiet integer ipsum, laoreet praesent eleifend donec. Sapien vestibulum, dolor laoreet semper non, iaculis in, lobortis dui cras commodo ipsum, venenatis feugiat aliquet. Mollis pede ultricies. Eius imperdiet nulla. Neque ut lorem venenatis sit, alias felis vitae phasellus sed dolor scelerisque, metus neque, lorem quis molestie. Fusce diam feugiat vivamus urna, sed id in sed risus penatibus quis, dictumst nibh fringilla turpis commodo ac massa, adipiscing pede sapien nullam et ut pede, eleifend aliquam ipsum. Ipsum metus iaculis magna, id sed quisque morbi. Sit sociis suspendisse commodo amet in, etiam wisi, consectetuer faucibus turpis ipsum mi, fermentum aenean. Egestas proin at. Euismod proin nec, id vitae in nam libero, tellus ante. Luctus dictum, urna ligula ligula accumsan laoreet lobortis aliquam, ultricies eget donec vitae vivamus.
+<h3>Header 3:2</h3>
+Massa potenti, faucibus nulla tempus, aliquam vel imperdiet ac tellus mollis vitae. In iaculis vel, lorem lorem, cras mollis justo blandit molestie consectetuer, vestibulum pede nulla aliquam posuere, vehicula ullamcorper. Sit pede euismod tristique. Malesuada aliquam aliquam. Sem egestas condimentum dis. Scelerisque elit quam viverra eu mauris, id sapien etiam nam sit, magnam dignissim elit mi viverra odio velit, in faucibus sapien ridiculus nunc pellentesque ut. Nunc purus. Mauris amet quis non, ut non cum, at etiam sed quis, sit augue. Sollicitudin in, imperdiet nec, risus proin tortor netus vulputate dictum, quam tortor, dolor fringilla nesciunt malesuada.
+<h3>Header 3:3</h3>
+A sapien eu, vestibulum duis et, in nisl facilisis lectus. Ipsum lacus eleifend nunc ornare felis nisl, accumsan cras magna sit mi, posuere at dolor diam, augue accumsan, sed placerat sed. Luctus maecenas, mauris non nibh duis, curabitur sodales condimentum ipsum, pede dapibus mattis praesent id facilisi quasi, sed convallis et sed aenean. Nulla tellus, a nam dignissim nibh id vivamus, praesent eu mauris mollis, est class adipiscing pede sed lectus voluptatem, enim non nunc dolor vel a. Nonummy mi etiam architecto integer donec ut, dictum dui at litora nulla quis ad, pede sapien at mi semper posuere, laoreet scelerisque varius viverra. Nam nulla suspendisse aliquam praesent praesent hac, elit ac, tellus pellentesque tincidunt, dignissim amet vitae donec, magna integer facilisi dignissim sed urna. Aliquet eget lacus vestibulum phasellus in. Facilisis integer purus, elit proin ridiculus id semper arcu nisl.
+<h3>Header 3:4</h3>
+Id libero sapien erat lorem quis, sed ut, lorem purus ligula ullamcorper dolor pede aliquam. Maecenas sapien, massa felis, semper eget ultricies. Blandit rutrum imperdiet ligula praesent, volutpat lectus sit, eget quis, suscipit ullamcorper. Faucibus non, eu nulla id sed placerat varius. Eros felis, pharetra turpis ridiculus facilisis.
+
+<h2>Header 2:2</h2>
+<h3>Header 3:5</h3>
+Lorem ipsum dolor sit amet, urna magna semper pariatur montes, ligula wisi, ligula ut donec nullam imperdiet, fermentum enim. Imperdiet integer ipsum, laoreet praesent eleifend donec. Sapien vestibulum, dolor laoreet semper non, iaculis in, lobortis dui cras commodo ipsum, venenatis feugiat aliquet. Mollis pede ultricies. Eius imperdiet nulla. Neque ut lorem venenatis sit, alias felis vitae phasellus sed dolor scelerisque, metus neque, lorem quis molestie. Fusce diam feugiat vivamus urna, sed id in sed risus penatibus quis, dictumst nibh fringilla turpis commodo ac massa, adipiscing pede sapien nullam et ut pede, eleifend aliquam ipsum. Ipsum metus iaculis magna, id sed quisque morbi. Sit sociis suspendisse commodo amet in, etiam wisi, consectetuer faucibus turpis ipsum mi, fermentum aenean. Egestas proin at. Euismod proin nec, id vitae in nam libero, tellus ante. Luctus dictum, urna ligula ligula accumsan laoreet lobortis aliquam, ultricies eget donec vitae vivamus.
+<h3>Header 3:6</h3>
+Massa potenti, faucibus nulla tempus, aliquam vel imperdiet ac tellus mollis vitae. In iaculis vel, lorem lorem, cras mollis justo blandit molestie consectetuer, vestibulum pede nulla aliquam posuere, vehicula ullamcorper. Sit pede euismod tristique. Malesuada aliquam aliquam. Sem egestas condimentum dis. Scelerisque elit quam viverra eu mauris, id sapien etiam nam sit, magnam dignissim elit mi viverra odio velit, in faucibus sapien ridiculus nunc pellentesque ut. Nunc purus. Mauris amet quis non, ut non cum, at etiam sed quis, sit augue. Sollicitudin in, imperdiet nec, risus proin tortor netus vulputate dictum, quam tortor, dolor fringilla nesciunt malesuada.
+<h3>Header 3:7</h3>
+A sapien eu, vestibulum duis et, in nisl facilisis lectus. Ipsum lacus eleifend nunc ornare felis nisl, accumsan cras magna sit mi, posuere at dolor diam, augue accumsan, sed placerat sed. Luctus maecenas, mauris non nibh duis, curabitur sodales condimentum ipsum, pede dapibus mattis praesent id facilisi quasi, sed convallis et sed aenean. Nulla tellus, a nam dignissim nibh id vivamus, praesent eu mauris mollis, est class adipiscing pede sed lectus voluptatem, enim non nunc dolor vel a. Nonummy mi etiam architecto integer donec ut, dictum dui at litora nulla quis ad, pede sapien at mi semper posuere, laoreet scelerisque varius viverra. Nam nulla suspendisse aliquam praesent praesent hac, elit ac, tellus pellentesque tincidunt, dignissim amet vitae donec, magna integer facilisi dignissim sed urna. Aliquet eget lacus vestibulum phasellus in. Facilisis integer purus, elit proin ridiculus id semper arcu nisl.
+<h3>Header 3:8</h3>
+Id libero sapien erat lorem quis, sed ut, lorem purus ligula ullamcorper dolor pede aliquam. Maecenas sapien, massa felis, semper eget ultricies. Blandit rutrum imperdiet ligula praesent, volutpat lectus sit, eget quis, suscipit ullamcorper. Faucibus non, eu nulla id sed placerat varius. Eros felis, pharetra turpis ridiculus facilisis.
+
+<h2>Header 2:3</h2>
+<h3>Header 3:9</h3>
+Lorem ipsum dolor sit amet, urna magna semper pariatur montes, ligula wisi, ligula ut donec nullam imperdiet, fermentum enim. Imperdiet integer ipsum, laoreet praesent eleifend donec. Sapien vestibulum, dolor laoreet semper non, iaculis in, lobortis dui cras commodo ipsum, venenatis feugiat aliquet. Mollis pede ultricies. Eius imperdiet nulla. Neque ut lorem venenatis sit, alias felis vitae phasellus sed dolor scelerisque, metus neque, lorem quis molestie. Fusce diam feugiat vivamus urna, sed id in sed risus penatibus quis, dictumst nibh fringilla turpis commodo ac massa, adipiscing pede sapien nullam et ut pede, eleifend aliquam ipsum. Ipsum metus iaculis magna, id sed quisque morbi. Sit sociis suspendisse commodo amet in, etiam wisi, consectetuer faucibus turpis ipsum mi, fermentum aenean. Egestas proin at. Euismod proin nec, id vitae in nam libero, tellus ante. Luctus dictum, urna ligula ligula accumsan laoreet lobortis aliquam, ultricies eget donec vitae vivamus.
+<h3>Header 3:10</h3>
+Massa potenti, faucibus nulla tempus, aliquam vel imperdiet ac tellus mollis vitae. In iaculis vel, lorem lorem, cras mollis justo blandit molestie consectetuer, vestibulum pede nulla aliquam posuere, vehicula ullamcorper. Sit pede euismod tristique. Malesuada aliquam aliquam. Sem egestas condimentum dis. Scelerisque elit quam viverra eu mauris, id sapien etiam nam sit, magnam dignissim elit mi viverra odio velit, in faucibus sapien ridiculus nunc pellentesque ut. Nunc purus. Mauris amet quis non, ut non cum, at etiam sed quis, sit augue. Sollicitudin in, imperdiet nec, risus proin tortor netus vulputate dictum, quam tortor, dolor fringilla nesciunt malesuada.
+<h3>Header 3:11</h3>
+A sapien eu, vestibulum duis et, in nisl facilisis lectus. Ipsum lacus eleifend nunc ornare felis nisl, accumsan cras magna sit mi, posuere at dolor diam, augue accumsan, sed placerat sed. Luctus maecenas, mauris non nibh duis, curabitur sodales condimentum ipsum, pede dapibus mattis praesent id facilisi quasi, sed convallis et sed aenean. Nulla tellus, a nam dignissim nibh id vivamus, praesent eu mauris mollis, est class adipiscing pede sed lectus voluptatem, enim non nunc dolor vel a. Nonummy mi etiam architecto integer donec ut, dictum dui at litora nulla quis ad, pede sapien at mi semper posuere, laoreet scelerisque varius viverra. Nam nulla suspendisse aliquam praesent praesent hac, elit ac, tellus pellentesque tincidunt, dignissim amet vitae donec, magna integer facilisi dignissim sed urna. Aliquet eget lacus vestibulum phasellus in. Facilisis integer purus, elit proin ridiculus id semper arcu nisl.
+<h3>Header 3:12</h3>
+Id libero sapien erat lorem quis, sed ut, lorem purus ligula ullamcorper dolor pede aliquam. Maecenas sapien, massa felis, semper eget ultricies. Blandit rutrum imperdiet ligula praesent, volutpat lectus sit, eget quis, suscipit ullamcorper. Faucibus non, eu nulla id sed placerat varius. Eros felis, pharetra turpis ridiculus facilisis.
+
+<h2>Header 2:4</h2>
+<h3>Header 3:13</h3>
+Lorem ipsum dolor sit amet, urna magna semper pariatur montes, ligula wisi, ligula ut donec nullam imperdiet, fermentum enim. Imperdiet integer ipsum, laoreet praesent eleifend donec. Sapien vestibulum, dolor laoreet semper non, iaculis in, lobortis dui cras commodo ipsum, venenatis feugiat aliquet. Mollis pede ultricies. Eius imperdiet nulla. Neque ut lorem venenatis sit, alias felis vitae phasellus sed dolor scelerisque, metus neque, lorem quis molestie. Fusce diam feugiat vivamus urna, sed id in sed risus penatibus quis, dictumst nibh fringilla turpis commodo ac massa, adipiscing pede sapien nullam et ut pede, eleifend aliquam ipsum. Ipsum metus iaculis magna, id sed quisque morbi. Sit sociis suspendisse commodo amet in, etiam wisi, consectetuer faucibus turpis ipsum mi, fermentum aenean. Egestas proin at. Euismod proin nec, id vitae in nam libero, tellus ante. Luctus dictum, urna ligula ligula accumsan laoreet lobortis aliquam, ultricies eget donec vitae vivamus.
+<h3>Header 3:14</h3>
+Massa potenti, faucibus nulla tempus, aliquam vel imperdiet ac tellus mollis vitae. In iaculis vel, lorem lorem, cras mollis justo blandit molestie consectetuer, vestibulum pede nulla aliquam posuere, vehicula ullamcorper. Sit pede euismod tristique. Malesuada aliquam aliquam. Sem egestas condimentum dis. Scelerisque elit quam viverra eu mauris, id sapien etiam nam sit, magnam dignissim elit mi viverra odio velit, in faucibus sapien ridiculus nunc pellentesque ut. Nunc purus. Mauris amet quis non, ut non cum, at etiam sed quis, sit augue. Sollicitudin in, imperdiet nec, risus proin tortor netus vulputate dictum, quam tortor, dolor fringilla nesciunt malesuada.
+<h3>Header 3:15</h3>
+A sapien eu, vestibulum duis et, in nisl facilisis lectus. Ipsum lacus eleifend nunc ornare felis nisl, accumsan cras magna sit mi, posuere at dolor diam, augue accumsan, sed placerat sed. Luctus maecenas, mauris non nibh duis, curabitur sodales condimentum ipsum, pede dapibus mattis praesent id facilisi quasi, sed convallis et sed aenean. Nulla tellus, a nam dignissim nibh id vivamus, praesent eu mauris mollis, est class adipiscing pede sed lectus voluptatem, enim non nunc dolor vel a. Nonummy mi etiam architecto integer donec ut, dictum dui at litora nulla quis ad, pede sapien at mi semper posuere, laoreet scelerisque varius viverra. Nam nulla suspendisse aliquam praesent praesent hac, elit ac, tellus pellentesque tincidunt, dignissim amet vitae donec, magna integer facilisi dignissim sed urna. Aliquet eget lacus vestibulum phasellus in. Facilisis integer purus, elit proin ridiculus id semper arcu nisl.
+<h3>Header 3:16</h3>
+Id libero sapien erat lorem quis, sed ut, lorem purus ligula ullamcorper dolor pede aliquam. Maecenas sapien, massa felis, semper eget ultricies. Blandit rutrum imperdiet ligula praesent, volutpat lectus sit, eget quis, suscipit ullamcorper. Faucibus non, eu nulla id sed placerat varius. Eros felis, pharetra turpis ridiculus facilisis.
+
+</body>
+</html>
