@@ -1,3 +1,8 @@
+jQuery jknav
+============
+
+*jQuery jknav* is a plugin, provides an easy way to enable jk binding navigation on a webpage.
+
 Demonstration
 -------------
 
@@ -14,7 +19,9 @@ Installation
 The basic install is easy, you only need these:
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="http://example.com/path/to/jquery.jknav.min.js"></script>
+    <script src="http://livibetter.github.com/jquery-jknav/jquery.jknav.min.js"></script>
+
+The link of jQuery jknav above is minified version, hosted on GitHub pages. 
 
 Add elements to navigation list first, then initialize jknav:
 
