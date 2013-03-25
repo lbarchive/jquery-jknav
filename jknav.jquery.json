@@ -1,0 +1,29 @@
+{
+  "name": "jknav",
+  "version": "0.5.1",
+  "title": "jQuery jknav",
+  "author": {
+    "name": "Yu-Jie Lin",
+    "email": "livibetter@gmail.com",
+    "url": "http://yjl.im"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/livibetter/jquery-jknav/blob/master/COPYING"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+
+  "description": "Enabling jk binding navigation on a page.",
+  "keywords": [
+    "jk",
+    "navigation"
+  ],
+  "homepage": "https://github.com/livibetter/jquery-jknav",
+  "docs": "https://github.com/livibetter/jquery-jknav",
+  "demo": "http://livibetter.github.com/jquery-jknav/jquery.jknav.demo.html",
+  "bugs": "https://github.com/livibetter/jquery-jknav/issues"
+}
