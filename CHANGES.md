@@ -3,6 +3,8 @@ CHANGES
 
 ## Development
 
+## Version 0.5.2 (2014-03-03T22:47:12Z)
+
 * fix compatiblity issue with newer jQuery (some after 1.4.2) by introducing `isWebkit()` (#1, @stockholmux)
 
 ## Version 0.5.1 (2013-03-25T23:13:29Z)

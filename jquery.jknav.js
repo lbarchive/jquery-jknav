@@ -2,8 +2,8 @@
  * @preserve jknav
  * @name      jquery.jknav.js
  * @author    Yu-Jie Lin
- * @version   0.5.1
- * @date      2013-03-26
+ * @version   0.5.2
+ * @date      2014-03-04
  * @copyright (C) 2010-2013 Yu-Jie Lin <livibetter@gmail.com>
  * @copyright (C) 2014 Kyle J. Davis
  * @license   MIT License
