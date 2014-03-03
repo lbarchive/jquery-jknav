@@ -4,10 +4,11 @@
  * @author    Yu-Jie Lin
  * @version   0.5.1
  * @date      2013-03-26
- * @copyright (c) 2010-2013 Yu-Jie Lin <livibetter@gmail.com>
+ * @copyright (C) 2010-2013 Yu-Jie Lin <livibetter@gmail.com>
+ * @copyright (C) 2014 Kyle J. Davis
  * @license   MIT License
  * @homepage  https://github.com/livibetter/jquery-jknav
- * @example   http://livibetter.github.com/jquery-jknav/jquery.jknav.demo.html
+ * @example   http://livibetter.github.io/jquery-jknav/jquery.jknav.demo.html
 */
 (function ($) {
 	/**
@@ -19,10 +20,14 @@
 		if ($.jknav.DEBUG && console && console.log)
 			console.log('jknav: ' + message);
 		}
+
 	/**
 	 * Simple check if it is webkit, inspired by the jQuery Migrate plugin
 	 */
-	function isWebkit(ua) { return ua.toLowerCase().match(/(chrome|webkit)[ \/]([\w.]+)/) };
+	function isWebkit(ua) {
+		return ua.toLowerCase().match(/(chrome|webkit)[ \/]([\w.]+)/)
+	};
+
 	/**
 	 * Add jQuery objects to navgation list
 	 *
@@ -172,7 +177,7 @@
 		init: function (options) {
 			var opts = $.extend($.extend({}, $.jknav.default_options), options);
 			$.jknav.index[opts.name] = null;
-			$.jknav.opts[opts.name] = opts;			
+			$.jknav.opts[opts.name] = opts;
 			$($.jknav.TARGET_KEYUP).keyup(function (e) {
 				keyup(e, opts);
 				});

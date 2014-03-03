@@ -11,7 +11,7 @@ See this [page](http://livibetter.github.com/jquery-jknav/jquery.jknav.demo.html
 Requirements
 ------------
 
-  * jQuery
+* jQuery
 
 Installation
 ------------
@@ -63,11 +63,11 @@ $.jknav.init({
 
 You can change the default options:
 
-  * `up` and `down` are the keys to trigger navigation.
-  * `name` is the navigation list's name.
-  * `easing` and `speed` are for navigation effect.
-  * `circular` indicates if it's a circular navigation.
-  * If `reevaluate` is true, then jknav uses current position to decide next item to navigate to; or based on the internal index variable. 
+* `up` and `down` are the keys to trigger navigation.
+* `name` is the navigation list's name.
+* `easing` and `speed` are for navigation effect.
+* `circular` indicates if it's a circular navigation.
+* If `reevaluate` is true, then jknav uses current position to decide next item to navigate to; or based on the internal index variable. 
 
 ### `$.jknav.up()` and `$.jknav.down()`
 
@@ -78,4 +78,5 @@ Copyright
 
 This project is licensed under the MIT License, see [COPYING](COPYING).
 
-  Copyright (c) 2010-2013 Yu-Jie Lin
+    Copyright (C) 2010-2013 Yu-Jie Lin
+    Copyright (C) 2014 Kyle J. Davis
