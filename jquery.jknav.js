@@ -19,7 +19,10 @@
 		if ($.jknav.DEBUG && console && console.log)
 			console.log('jknav: ' + message);
 		}
-
+	/**
+	 * Simple check if it is webkit, inspired by the jQuery Migrate plugin
+	 */
+	function isWebkit(ua) { return ua.toLowerCase().match(/(chrome|webkit)[ \/]([\w.]+)/) };
 	/**
 	 * Add jQuery objects to navgation list
 	 *
@@ -160,8 +163,8 @@
 		DEBUG: false,
 		TARGET_KEYUP: 'html',
 		// IE, Firefox, and Opera must use <html> to scroll
-		// Webkit must use <bod> to scroll
-		TARGET: (!$.browser.webkit)?'html':'body',
+		// Webkit must use <body> to scroll
+		TARGET: isWebkit(navigator.userAgent) ? 'body' : 'html',
 		/**
 		 * Initialization function
 		 * @param {Object} options Options
@@ -169,7 +172,7 @@
 		init: function (options) {
 			var opts = $.extend($.extend({}, $.jknav.default_options), options);
 			$.jknav.index[opts.name] = null;
-			$.jknav.opts[opts.name] = opts;
+			$.jknav.opts[opts.name] = opts;			
 			$($.jknav.TARGET_KEYUP).keyup(function (e) {
 				keyup(e, opts);
 				});
