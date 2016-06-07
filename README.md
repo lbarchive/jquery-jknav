@@ -6,7 +6,7 @@ jQuery jknav
 Demonstration
 -------------
 
-See this [page](http://livibetter.github.com/jquery-jknav/jquery.jknav.demo.html).
+See this [page](http://livibetter-backup.github.io/jquery-jknav/jquery.jknav.demo.html).
 
 Requirements
 ------------
@@ -20,7 +20,7 @@ The basic install is easy, you only need these:
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://livibetter.github.com/jquery-jknav/jquery.jknav.min.js"></script>
+<script src="http://livibetter-backup.github.io/jquery-jknav/jquery.jknav.min.js"></script>
 ```
 
 The link of jQuery jknav above is minified version, hosted on GitHub pages. 
@@ -80,3 +80,4 @@ This project is licensed under the MIT License, see [COPYING](COPYING).
 
     Copyright (C) 2010-2013 Yu-Jie Lin
     Copyright (C) 2014 Kyle J. Davis
+    Copyright (C) 2016 Petr Vacha
