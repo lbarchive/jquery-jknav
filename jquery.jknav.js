@@ -98,10 +98,16 @@
 					index = $.jknav.items[opts.name].length - 1;
 				}
 			else {
-				if (offset > 0 && ++index >= $.jknav.items[opts.name].length)
-					index = 0
-				else if (offset < 0 && top == Math.floor($($.jknav.items[opts.name][index]).offset().top) && --index < 0)
-					index = $.jknav.items[opts.name].length - 1;
+				if (offset > 0 && ++index >= $.jknav.items[opts.name].length) {
+					if (opts.circular) {
+						index = 0;
+						}
+					}
+				else if (offset < 0 && top == Math.floor($($.jknav.items[opts.name][index]).offset().top) && --index < 0) {
+					if (opts.circular) {
+						index = $.jknav.items[opts.name].length - 1;
+						}
+					}
 				}
 			}
 		else {
@@ -137,8 +143,9 @@
 			if (opts.reevaluate)
 				$.jknav.index[opts.name] = null;
 			var index = calc_index((ch == opts.down.toLowerCase()) ? 1 : -1, opts);
-			var $item = $($.jknav.items[opts.name][index][0]);
-			$($.jknav.TARGET).animate(
+			if ($.jknav.items[opts.name][index] !== undefined) {
+				var $item = $($.jknav.items[opts.name][index][0]);
+				$($.jknav.TARGET).animate(
 				{
 					scrollLeft: Math.floor($item.offset().left),
 					scrollTop: Math.floor($item.offset().top)
@@ -149,6 +156,7 @@
 					do_callback(index, opts)
 					}
 				);
+				}
 			}
 		}
 
