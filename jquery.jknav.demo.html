@@ -35,6 +35,10 @@ $(function () {
 	$('h2').jknav(hl, 'h2-nocircular');
 	$.jknav.init({name: 'h2-nocircular', up: 'u', down: 'd', easing: 'easeOutBounce', speed: 'slow', circular: false, reevaluate: false});
 
+    // Using m, n for non-circular with reevaluate
+	$('h2,h3').jknav(hl, 'h2h3-nocircular-reevaluate');
+	$.jknav.init({up: 'm', down: 'n', name: 'h2h3-nocircular-reevaluate', circular:false, reevaluate: true});
+
 	// Using default j, k
 	$('h2,h3').jknav(hl, 'h2h3');
 	$.jknav.init({name: 'h2h3', reevaluate: true});
@@ -47,11 +51,13 @@ $(function () {
 <body>
 <div class='keysim'>
 <a href='javascript:$.jknav.down("h2h3");'>j</a> | <a href='javascript:$.jknav.up("h2h3");'>k</a><br/>
+<a href='javascript:$.jknav.down("h2h3-nocircular-reevaluate");'>n</a> | <a href='javascript:$.jknav.up("h2h3-nocircular-reevaluate");'>m</a><br/>
 <a href='javascript:$.jknav.down();'>h</a> | <a href='javascript:$.jknav.up();'>l</a><br/>
 <a href='javascript:$.jknav.down("h2-nocircular");'>d</a> | <a href='javascript:$.jknav.up("h2-nocircular");'>u</a><br/>
 </div>
 <h1>jknav demo page</h1>
 <p>j, k - move between h2, h3 (easing: swing, speed: normal, reevalute: true)</p>
+<p>n, m - move between h2, h3 (circular: false, reevalute: true)</p>
 <p>&lt;Up&gt;, &lt;Down&gt; - same as j, k. This is powered by <a href="https://github.com/jeresig/jquery.hotkeys">jquery.hotkeys</a> plugin. View source code for how to work with hotkeys plugin.</p>
 <p>h, l - move between h2 (easing: easeOutBounce, speed: slow, reevalute: false)</p>
 <p>u, d - move between h2 (easing: easeOutBounce, speed: slow, circular: false, reevalute: false)</p>
