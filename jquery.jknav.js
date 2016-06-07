@@ -2,13 +2,14 @@
  * @preserve jknav
  * @name      jquery.jknav.js
  * @author    Yu-Jie Lin
- * @version   0.5.2
- * @date      2014-03-04
+ * @version   0.5.3
+ * @date      2016-06-07
  * @copyright (C) 2010-2013 Yu-Jie Lin <livibetter@gmail.com>
  * @copyright (C) 2014 Kyle J. Davis
+ * @copyright (C) 2016 Petr Vacha
  * @license   MIT License
- * @homepage  https://github.com/livibetter/jquery-jknav
- * @example   http://livibetter.github.io/jquery-jknav/jquery.jknav.demo.html
+ * @homepage  https://github.com/livibetter-backup/jquery-jknav
+ * @example   http://livibetter-backup.github.io/jquery-jknav/jquery.jknav.demo.html
 */
 (function ($) {
 	/**

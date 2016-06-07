@@ -3,6 +3,10 @@ CHANGES
 
 ## Development
 
+## Version 0.5.3 (2016-06-07T11:19:47Z)
+
+* respect `circular` when it is false and `reevaluate` is true (#3, @nrsimha)
+
 ## Version 0.5.2 (2014-03-03T22:47:12Z)
 
 * fix compatiblity issue with newer jQuery (some after 1.4.2) by introducing `isWebkit()` (#1, @stockholmux)
